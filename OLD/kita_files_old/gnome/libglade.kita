@@ -1,0 +1,2 @@
+KITA_TYPE="gnome"
+DEPEND="libxml2 gtk+"

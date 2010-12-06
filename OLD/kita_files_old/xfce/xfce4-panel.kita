@@ -1,0 +1,2 @@
+KITA_TYPE="make"
+DEPEND="glibc gtk+ libX11 libxfce4util startup-notification libwnck"

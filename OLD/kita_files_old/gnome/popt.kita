@@ -1,0 +1,10 @@
+KITA_TYPE="gnome"
+BUILD=""
+#Paste Build instructions here
+build_src()
+{
+sed -i -e "/*origOptString ==/c 0)" popt.c &&
+./configure --prefix=/usr &&
+make
+}
+""

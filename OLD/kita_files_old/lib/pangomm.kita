@@ -1,0 +1,8 @@
+KITA_TYPE="make"
+DEPEND="pango libsigc++ cairomm"
+BUILD=""
+build_src(){
+./configure --prefix=/usr --sysconfdir=/etc &&
+make
+}
+""

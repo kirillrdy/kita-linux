@@ -1,0 +1,3 @@
+KITA_TYPE="make"
+FILES="http://hal.freedesktop.org/releases/hal-info-20090716.tar.gz"
+DEPEND="hald"
