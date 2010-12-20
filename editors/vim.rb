@@ -2,7 +2,7 @@ package 'vim' do
   type 'Make'
   source "ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2"
 
-  def config
+  configure do
   "
     echo '#define SYS_VIMRC_FILE \"/etc/vimrc\"' >> src/feature.h
     ./configure --prefix=/usr --enable-multibyte
@@ -10,7 +10,7 @@ package 'vim' do
   end
 
 
-  def build
+  build do
   '
     make
 
