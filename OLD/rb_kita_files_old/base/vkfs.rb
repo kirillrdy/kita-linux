@@ -1,5 +1,5 @@
 package 'vkfs' do
-  type 'PreBaby'
+  type 'Meta'
 
   installed? do
     File.exists?(LFS+"/dev")
