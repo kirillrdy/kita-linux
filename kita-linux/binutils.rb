@@ -1,25 +1,25 @@
-package 'binutils' do
-  type Make
+#package 'binutils' do
+#  type Make
 
-  source "http://ftp.gnu.org/gnu/binutils/binutils-2.20.1.tar.bz2"
-
-
-  @build_dir = "#{KITAMAN_BUILD_DIR}/binutils-2.20.1"
-  def config
-    <<-EOF
-      mkdir -pv ../binutils-build
-      cd ../binutils-build
-     ../binutils-2.20.1/configure \
-      --target=$LFS_TGT --prefix=/tools \
-      --disable-nls --disable-werror
-    EOF
-  end
+#  source "http://ftp.gnu.org/gnu/binutils/binutils-2.20.1.tar.bz2"
 
 
-  def kita_install_OLD
-    <<-EOF
-      mkdir -p $INSTALL_DIR
-      make DESTDIR=$INSTALL_DIR tooldir=/usr install
-    EOF
-  end
-end
+#  @build_dir = "#{KITAMAN_BUILD_DIR}/binutils-2.20.1"
+#  def config
+#    <<-EOF
+#      mkdir -pv ../binutils-build
+#      cd ../binutils-build
+#     ../binutils-2.20.1/configure \
+#      --target=$LFS_TGT --prefix=/tools \
+#      --disable-nls --disable-werror
+#    EOF
+#  end
+
+
+#  def kita_install_OLD
+#    <<-EOF
+#      mkdir -p $INSTALL_DIR
+#      make DESTDIR=$INSTALL_DIR tooldir=/usr install
+#    EOF
+#  end
+#end

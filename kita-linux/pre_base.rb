@@ -1,3 +1,3 @@
-extend Meta
+#extend Meta
 
-@depend = ['prepare_tools','binutils','gcc','linux-headers']
+#@depend = ['prepare_tools','binutils','gcc','linux-headers']
