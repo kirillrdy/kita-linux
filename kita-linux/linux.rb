@@ -7,7 +7,7 @@ package 'linux' do
   configure do
     '
     make mrproper
-    make LANG=<host_LANG_value> LC_ALL= menuconfig
+    make menuconfig
     '
   end
 
