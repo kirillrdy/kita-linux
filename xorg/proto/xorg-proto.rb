@@ -1,7 +1,7 @@
 require 'open-uri'
 
 def get_list_of_modules url
-  open().read.split("\n").select{|x| not (/^#/ === x) }.map{|x| File.smart_basename x }
+  open(url).read.split("\n").select{|x| not (/^#/ === x) }.map{|x| File.smart_basename x }
 end
 
 list_of_modules = get_list_of_modules 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
