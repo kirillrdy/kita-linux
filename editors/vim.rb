@@ -10,13 +10,12 @@ package 'vim' do
   end
 
 
-  build do
+  install do
   '
-    make
+    make install
 
-    mkdir -p $INSTALL_DIR/etc
     #some basic config
-    cat > $INSTALL_DIR/etc/vimrc << "EOF"
+    cat > /etc/vimrc << "EOF"
     " Begin /etc/vimrc
     " This vimrc was written by Kirill R
 
