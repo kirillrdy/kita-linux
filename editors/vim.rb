@@ -11,9 +11,8 @@ package 'vim' do
 
 
   install do
-  '
-    make install
-
+    install = "make install \n"
+string = <<EOFF
 #some basic config
 cat > /etc/vimrc << "EOF"
 " Begin /etc/vimrc
@@ -41,7 +40,10 @@ endif
 
 " End /etc/vimrc
 EOF
-  '
+EOFF
+
+  install + string
+
   end
 
 
