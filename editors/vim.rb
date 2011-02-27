@@ -40,7 +40,7 @@ package 'vim' do
     endif
 
     " End /etc/vimrc
-  EOF
+EOF
   '
   end
 
