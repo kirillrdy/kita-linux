@@ -15,5 +15,6 @@ end
 
 package 'xorg-proto' do
   type :meta
+  version '7.6-1'
   depends_on list_of_modules
 end
