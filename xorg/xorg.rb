@@ -6,6 +6,24 @@ def get_list_of_modules url
 end
 
 
+
+################################################################################
+# XORG PROTO
+xorg_proto_modules = get_list_of_modules 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
+
+xorg_proto_modules.each do |mod|
+  package mod do
+    type :make
+  end
+end
+
+package 'xorg-proto' do
+  type :meta
+  depends_on xorg_proto_modules
+  version '7.6-1'
+end
+
+
 ################################################################################
 # XORG UTIL
 xorg_util_modules = get_list_of_modules 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/util-7.6-1.wget'
@@ -22,21 +40,6 @@ package 'xorg-util' do
   depends_on xorg_util_modules
 end
 
-################################################################################
-# XORG PROTO
-xorg_proto_modules = get_list_of_modules 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
-
-xorg_proto_modules.each do |mod|
-  package mod do
-    type :make
-  end
-end
-
-package 'xorg-proto' do
-  type :meta
-  depends_on ['xorg-util'] + xorg_proto_modules
-  version '7.6-1'
-end
 
 ################################################################################
 # XORG LIB
@@ -50,7 +53,7 @@ end
 
 package 'xorg-lib' do
   type :meta
-  depends_on ['xorg-proto','fontconfig','libXdmcp'] + xorg_lib_modules
+  depends_on ['xorg-proto','xorg-util','fontconfig','libXdmcp'] + xorg_lib_modules
   version '7.6-1'
 end
 
