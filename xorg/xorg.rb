@@ -67,7 +67,7 @@ xorg_app_modules.each do |mod|
   end
 end
 
-package 'xorg-lib' do
+package 'xorg-app' do
   type :meta
   depends_on ['libpng','xcb-util','xorg-lib'] + xorg_app_modules
   version '7.6-1'
