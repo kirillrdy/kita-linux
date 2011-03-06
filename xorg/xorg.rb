@@ -53,7 +53,7 @@ end
 
 package 'xorg-lib' do
   type :meta
-  depends_on ['xorg-proto','xorg-util','fontconfig','libXdmcp'] + xorg_lib_modules
+  depends_on ['fontconfig','xorg-proto','xorg-util','libXdmcp','libxcb'] + xorg_lib_modules
   version '7.6-1'
 end
 
