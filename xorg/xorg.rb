@@ -57,6 +57,22 @@ package 'xorg-lib' do
   version '7.6-1'
 end
 
+################################################################################
+# XORG APP
+xorg_app_modules = get_list_of_modules 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/app-7.6-1.wget'
+
+xorg_app_modules.each do |mod|
+  package mod do
+    type :make
+  end
+end
+
+package 'xorg-lib' do
+  type :meta
+  depends_on ['libpng','xcb-util','xorg-lib'] + xorg_app_modules
+  version '7.6-1'
+end
+
 
 #package 'xorg' do
 #  type :meta
