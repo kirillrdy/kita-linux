@@ -4,7 +4,8 @@ package 'freetype' do
 
   configure do
     <<-EOF
-    sed -i -r -e 's:.*(#.*BYTE.*) .*:\1:' -e 's:.*(#.*SUBPIX.*) .*:\1:' include/freetype/config/ftoption.h &&
+    #TODO fix fonts
+    #sed -i -r -e 's:.*(#.*BYTE.*) .*:\1:' -e 's:.*(#.*SUBPIX.*) .*:\1:' include/freetype/config/ftoption.h &&
     ./configure --prefix=/usr
     EOF
   end
