@@ -6,80 +6,33 @@ def get_list_of_files url
 end
 
 
+def xorg_module module_name, xorg_version , additional_dependencies = []
 
-################################################################################
-# XORG PROTO
-xorg_proto_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
-xorg_proto_base_url = 'http://xorg.freedesktop.org/releases/individual/proto/'
-xorg_proto_files.each do |file|
-  package File.smart_basename(file) do
-    type :make
-    source xorg_proto_base_url + file
+  xorg_files = get_list_of_files "http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/#{module_name}-#{xorg_version}.wget"
+  xorg_base_url = "http://xorg.freedesktop.org/releases/individual/#{module_name}/"
+  xorg_files.each do |file|
+    package File.smart_basename(file) do
+      type :make
+      source xorg_base_url + file
+    end
   end
-end
 
-package 'xorg-proto' do
-  type :meta
-  depends_on xorg_proto_files.map{|x| File.smart_basename x }
-  version '7.6-1'
-end
-
-
-################################################################################
-# XORG UTIL
-xorg_util_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/util-7.6-1.wget'
-xorg_util_base_url = 'http://xorg.freedesktop.org/releases/individual/util/'
-
-xorg_util_files.each do |file|
-  package File.smart_basename(file) do
-    type :make
-    source xorg_util_base_url + file
+  package "xorg-#{module_name}" do
+    type :meta
+    depends_on additional_dependencies + xorg_proto_files.map{|x| File.smart_basename x }
+    version xorg_version
   end
-end
 
-package 'xorg-util' do
-  type :meta
-  version '7.6-1'
-  depends_on xorg_util_files.map{|x| File.smart_basename x }
 end
 
 
 ################################################################################
-# XORG LIB
-xorg_lib_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/lib-7.6-1.wget'
-xorg_lib_base_url = 'http://xorg.freedesktop.org/releases/individual/lib/'
+# XORG PROTO
+xorg_module 'proto','7.6-1'
+xorg_module 'util','7.6-1'
+xorg_module 'lib','7.6-1', ['fontconfig','xorg-proto','xorg-util','libXdmcp','libxcb']
+xorg_module 'app','7.6-1', ['libpng','xcb-util','xorg-lib','mesalib']
 
-xorg_lib_files.each do |file|
-  package File.smart_basename(file) do
-    type :make
-    source xorg_lib_base_url + file
-  end
-end
-
-package 'xorg-lib' do
-  type :meta
-  depends_on ['fontconfig','xorg-proto','xorg-util','libXdmcp','libxcb'] + xorg_lib_files.map{|x| File.smart_basename x }
-  version '7.6-1'
-end
-
-################################################################################
-# XORG APP
-xorg_app_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/app-7.6-1.wget'
-xorg_app_base_url = 'http://xorg.freedesktop.org/releases/individual/app/'
-
-
-xorg_app_files.each do |file|
-  package File.smart_basename(file) do
-    type :make
-    source xorg_app_base_url + file
-  end
-end
-
-package 'xorg-app' do
-  type :meta
-  depends_on ['libpng','xcb-util','xorg-lib','mesalib'] + xorg_app_files.map{|x| File.smart_basename x }
-  version '7.6-1'
-end
 
 
 #package 'xorg' do
