@@ -9,7 +9,7 @@ end
 
 ################################################################################
 # XORG PROTO
-xorg_proto_files = get_list_of_modules 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
+xorg_proto_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
 xorg_proto_base_url = 'http://xorg.freedesktop.org/releases/individual/proto/'
 xorg_proto_files.each do |file|
   package File.smart_basebname(file) do
