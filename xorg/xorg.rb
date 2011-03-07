@@ -12,7 +12,7 @@ end
 xorg_proto_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BLFS/svn/xorg/proto-7.6-1.wget'
 xorg_proto_base_url = 'http://xorg.freedesktop.org/releases/individual/proto/'
 xorg_proto_files.each do |file|
-  package File.smart_basebname(file) do
+  package File.smart_basename(file) do
     type :make
     source xorg_proto_base_url + file
   end
@@ -31,7 +31,7 @@ xorg_util_files = get_list_of_files 'http://anduin.linuxfromscratch.org/files/BL
 xorg_util_base_url = 'http://xorg.freedesktop.org/releases/individual/util/'
 
 xorg_util_files.each do |file|
-  package File.smart_basebname(file) do
+  package File.smart_basename(file) do
     type :make
     source xorg_util_base_url + file
   end
@@ -69,7 +69,7 @@ xorg_app_base_url = 'http://xorg.freedesktop.org/releases/individual/app/'
 
 
 xorg_app_files.each do |file|
-  package File.smart_basebname(file) do
+  package File.smart_basename(file) do
     type :make
     source xorg_app_base_url + file
   end
@@ -77,7 +77,7 @@ end
 
 package 'xorg-app' do
   type :meta
-  depends_on ['libpng','xcb-util','xorg-lib'] + xorg_app_files.map{|x| File.smart_basebname x }
+  depends_on ['libpng','xcb-util','xorg-lib'] + xorg_app_files.map{|x| File.smart_basename x }
   version '7.6-1'
 end
 
