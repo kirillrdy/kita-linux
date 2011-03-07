@@ -77,7 +77,7 @@ end
 
 package 'xorg-app' do
   type :meta
-  depends_on ['libpng','xcb-util','xorg-lib'] + xorg_app_files.map{|x| File.smart_basename x }
+  depends_on ['libpng','xcb-util','xorg-lib','mesalib'] + xorg_app_files.map{|x| File.smart_basename x }
   version '7.6-1'
 end
 
