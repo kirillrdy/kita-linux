@@ -32,7 +32,8 @@ xorg_module 'proto','7.6-1'
 xorg_module 'util','7.6-1'
 xorg_module 'lib','7.6-1', ['fontconfig','xorg-proto','xorg-util','libXdmcp','libxcb']
 xorg_module 'app','7.6-1', ['libpng','xcb-util','xorg-lib','mesalib']
-
+xorg_module 'font','7.6-1', ['xorg-app','xcursor-themes']
+#TODO add symlink as per blfs font info
 
 
 #package 'xorg' do
