@@ -19,7 +19,7 @@ def xorg_module module_name, xorg_version , additional_dependencies = []
 
   package "xorg-#{module_name}" do
     type :meta
-    depends_on additional_dependencies + xorg_proto_files.map{|x| File.smart_basename x }
+    depends_on additional_dependencies + xorg_files.map{|x| File.smart_basename x }
     version xorg_version
   end
 
