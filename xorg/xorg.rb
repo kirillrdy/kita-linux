@@ -40,7 +40,7 @@ def xorg_module module_name, xorg_version , additional_dependencies = [], option
     depends_on additional_dependencies + xorg_files.map{|x| File.smart_basename x }
     version xorg_version
     
-    if optional_post_install
+    if optional_post_install != nil
       post_install do
         optional_post_install
       end
@@ -60,8 +60,8 @@ xorg_module 'app','7.6-1', ['libpng','xcb-util','xorg-lib','mesalib']
 xorg_module 'font','7.6-1', ['xorg-app','xcursor-themes'], 'install -v -d -m755 /usr/share/fonts && ln -svn /usr/share/fonts/X11/fonts/OTF /usr/share/fonts/X11-OTF && ln -svn /usr/share/fonts/X11/fonts/TTF /usr/share/fonts/X11-TTF'
 xorg_module 'driver','7.6-1', ['xorg-server']
 
-#package 'xorg' do
-#  type :meta
-#  version '7.6'
-#  depends_on 'xorg-server xorg-driver'
-#end
+package 'xorg' do
+  type :meta
+  version '7.6'
+  depends_on ['xorg-server', 'xorg-driver']
+end
