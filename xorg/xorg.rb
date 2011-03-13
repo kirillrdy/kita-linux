@@ -63,5 +63,5 @@ xorg_module 'driver','7.6-1', ['xorg-server']
 package 'xorg' do
   type :meta
   version '7.6'
-  depends_on ['xorg-server', 'xorg-driver']
+  depends_on ['pkg-config','xorg-server', 'xorg-driver']
 end
