@@ -1,7 +1,7 @@
 package 'polkit' do
   type :make
   source 'http://hal.freedesktop.org/releases/polkit-0.100.tar.gz'
-  depends_on 'Linux-PAM'
+  #depends_on 'Linux-PAM' #TODO this is for lfs build polkit, with gentoo stage we dont need this
   configure do
     <<-EOS
       groupadd -f -g 28 polkituser
