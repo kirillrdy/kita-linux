@@ -13,6 +13,7 @@ TERMINFO=/usr/lib/terminfo ./configure --prefix=/usr \
   end
   install do
     <<-EOS
+    make install
 cat >> /etc/X11/app-defaults/XTerm << "EOF"
 *VT100*locale: true
 *VT100*faceName: Monospace
