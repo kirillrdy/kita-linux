@@ -6,7 +6,7 @@ package 'xterm' do
     <<-EOS
     sed -i '/v0/,+1s/new:/new:kb=^?:/' termcap &&
 echo -e '\tkbs=\\177,' >>terminfo &&
-TERMINFO=/usr/lib/terminfo ./configure=/usr \
+TERMINFO=/usr/lib/terminfo ./configure --prefix=/usr \
     --enable-luit --enable-wide-chars \
     --with-app-defaults=/etc/X11/app-defaults
     EOS
