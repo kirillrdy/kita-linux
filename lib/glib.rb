@@ -1,4 +1,4 @@
 package 'glib' do
   type :make
-  source 'http://ftp.gnome.org/pub/gnome/sources/glib/2.24/glib-2.24.2.tar.bz2'
+  source 'http://ftp.acc.umu.se/pub/GNOME/sources/glib/2.28/glib-2.28.6.tar.bz2'
 end
