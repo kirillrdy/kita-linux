@@ -1,5 +1,4 @@
-package 'tiff' do
+package 'libtiff' do
   type :make
-  source 'http://libtiff.maptools.org/dl/tiff-3.8.2.tar.gz'
-  depends_on 'glib'
+  source 'http://download.osgeo.org/libtiff/tiff-3.9.4.tar.gz'
 end
