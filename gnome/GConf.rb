@@ -1,6 +1,6 @@
 package 'GConf' do
   type :make
-  depends_on 'ORBit2 libxml2 gtk+ polkit'
+  depends_on ['ORBit2','libxml2','gtk+', 'polkit']
   configure do
   '
   ./configure --prefix=/usr \
