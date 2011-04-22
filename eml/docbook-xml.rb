@@ -1,6 +1,6 @@
 package 'docbook-xml' do
   type :make
-  depends_on 'libxml2'
+  depends_on ['libxml2','unzip']
   source 'http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip'
   configure do
     ''
