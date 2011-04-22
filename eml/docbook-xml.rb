@@ -12,8 +12,9 @@ package 'docbook-xml' do
   
   install do
   <<-EOS
-install -v -d -m755 $INSTALL_DIR/usr/share/xml/docbook/xml-dtd-4.5 &&
-install -v -d -m755 $INSTALL_DIR/etc/xml &&
+  cd ..
+install -v -d -m755 /usr/share/xml/docbook/xml-dtd-4.5 &&
+install -v -d -m755 /etc/xml &&
 chown -R root:root . &&
 cp -v -af docbook.cat *.dtd ent/ *.mod \
     /usr/share/xml/docbook/xml-dtd-4.5
