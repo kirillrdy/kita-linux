@@ -1,25 +1,23 @@
-KITA_TYPE="make"
-DEPEND="libxml2"
-BUILD=""
-#Paste Build instructions here
-config_src()
-{
-echo "test"
-}
-build_src()
-{
+package 'docbook-xml' do
+  type :make
+  depends_on 'libxml2'
+  source 'http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip'
+  configure do
+    ''
+  end
+  
+  build do
+    ''
+  end
+  
+  install do
+  <<-EOS
 install -v -d -m755 $INSTALL_DIR/usr/share/xml/docbook/xml-dtd-4.5 &&
 install -v -d -m755 $INSTALL_DIR/etc/xml &&
 chown -R root:root . &&
 cp -v -af docbook.cat *.dtd ent/ *.mod \
-    $INSTALL_DIR/usr/share/xml/docbook/xml-dtd-4.5
-}
-kita_install()
-{
-echo
-}
-post_install()
-{
+    /usr/share/xml/docbook/xml-dtd-4.5
+
 if [ ! -e /etc/xml/docbook ]; then
     xmlcatalog --noout --create /etc/xml/docbook
 fi &&
@@ -111,5 +109,6 @@ do
     "file:///etc/xml/docbook" \
     /etc/xml/catalog
 done
-}
-""
+
+    EOS
+  end
