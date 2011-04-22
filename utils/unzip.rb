@@ -1,5 +1,6 @@
 package 'unzip' do
   type :make
+  version '6.0'
   source 'http://downloads.sourceforge.net/infozip/unzip60.tar.gz'
   configure do
     ''
