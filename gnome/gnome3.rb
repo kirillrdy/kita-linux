@@ -133,7 +133,7 @@ end
 
 package 'libsoup' do
   type :make
-  depends_on ["glib-networking",'libgnome-keyring','sqlite3']
+  depends_on ['gobject-introspection',"glib-networking",'libgnome-keyring','sqlite3']
 end
 
 package 'libgnome-keyring' do
