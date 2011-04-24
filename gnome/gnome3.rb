@@ -74,7 +74,7 @@ end
 
 package 'GConf' do
   type :make
-  depends_on ['ORBit2','libxml2', 'glib','gtk+']
+  depends_on ['ORBit2','libxml2','dbus-glib','gtk+']
   configure do
   '
   ./configure --prefix=/usr \
