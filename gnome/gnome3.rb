@@ -130,9 +130,12 @@ end
 
 package 'libsoup' do
   type :make
-  depends_on ["glib-networking"]
+  depends_on ["glib-networking",'libgnome-keyring']
 end
 
+package 'libgnome-keyring' do
+  type :make
+end
 
 package 'libgdata' do
   type :make
