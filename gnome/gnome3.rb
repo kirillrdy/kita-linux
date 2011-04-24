@@ -124,7 +124,7 @@ end
 
 package 'glib-networking' do
   type :make
-  depends_on ["glib", "gsettings-desktop-schemas"]
+  depends_on ["glib", "gsettings-desktop-schemas",'gnutls']
 end
 
 
