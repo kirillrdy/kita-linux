@@ -17,7 +17,7 @@ useradd -c "D-BUS Message Daemon User" -d /dev/null \
   EOS
   end
   post_install do
-  <<-EOS
+  <<EOS
 cat > /etc/dbus-1/session-local.conf <<"EOF"
 <!DOCTYPE busconfig PUBLIC
  "-//freedesktop//DTD D-BUS Bus Configuration 1.0//EN"
@@ -29,6 +29,6 @@ cat > /etc/dbus-1/session-local.conf <<"EOF"
 
 </busconfig>
 EOF
-  EOS
+EOS
   end
 end
