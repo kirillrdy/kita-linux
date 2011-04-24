@@ -11,6 +11,7 @@ package 'nss' do
   
   build do
     <<-EOS
+bash <<"NSS_CMD" 
 export BUILD_OPT=1
 export NSS_USE_SYSTEM_SQLITE=1
 export NSPR_INCLUDE_DIR=/usr/include/nspr
@@ -31,7 +32,7 @@ install -v -m755 $NSS_LINUXDIR/bin/{certutil,nss-config,pk12util} /usr/bin
 install -v -m644 $NSS_LINUXDIR/lib/pkgconfig/nss.pc /usr/lib/pkgconfig
 cp -v -RL {public,private}/nss/* /usr/include/nss
 chmod 644 /usr/include/nss/*
-
+NSS_CMD
     EOS
   end
   
