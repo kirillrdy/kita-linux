@@ -135,6 +135,7 @@ end
 
 package 'libgnome-keyring' do
   type :make
+  depends_on 'dbus'
 end
 
 package 'libgdata' do
