@@ -1,22 +1,26 @@
-#extend Make
+package 'linux' do
 
-#@files = "http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.34.tar.bz2"
+  type :make
+  
+  source 'http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.37.2.tar.bz2'
 
-#def config
-#  return
-#end
+  configure do
+    '
+    '
+  end
 
-#def build
-#  "
-#  make mrproper
-#  make headers_check
-#  "
-#end
+  build do
+    '
+    make mrproper
+    make headers_check
+    '
+  end
 
-#def kita_install
-#  "
-#  make INSTALL_HDR_PATH=dest headers_install
-#  mkdir -pv $INSTALL_DIR/tools/include
-#  cp -rv dest/include/* $INSTALL_DIR/tools/include
-#  "
-#end
+  install do
+  '
+    make INSTALL_HDR_PATH=dest headers_install
+    cp -rv dest/include/* /usr/include
+  '
+  end
+
+end
