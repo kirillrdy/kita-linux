@@ -143,6 +143,7 @@ end
 
 package 'libgdata' do
   type :make
+  source 'ftp://ftp.gnome.org/pub/gnome/sources/libgdata/0.8/libgdata-0.8.1.tar.bz2'
   depends_on ["libsoup"]
 end
 
