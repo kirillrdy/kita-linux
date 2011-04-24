@@ -20,7 +20,7 @@ end
 
 package 'pango' do
   type :make
-  depends_on ['glib','cairo','xorg','fontconfig']
+  depends_on ['glib','cairo','xorg','fontconfig','gobject-introspection']
   post_install do
     'pango-querymodules > /etc/pango/pango.modules'
   end
