@@ -235,3 +235,10 @@ package 'libxklavier' do
   depends_on ["glib"]
 end
 
+
+package 'gsettings-desktop-schemas' do
+  type :make
+end
+
+
+
