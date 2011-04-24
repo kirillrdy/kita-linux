@@ -29,7 +29,7 @@ end
 
 package 'gdk-pixbuf' do
   type :make
-  depends_on ["glib", "gobject-introspection"]
+  depends_on ["glib", "gobject-introspection",'libtiff','libjpeg']
 end
 
 package 'gtk+' do
