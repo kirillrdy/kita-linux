@@ -1,4 +1,4 @@
-package 'linux' do
+package 'linux-headers' do
 
   type :make
   
