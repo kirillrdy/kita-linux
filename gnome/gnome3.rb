@@ -156,7 +156,7 @@ end
 
 package 'evolution-data-server' do
   type :make
-  depends_on ["libgweather", "libgdata", "gtk+"]
+  depends_on ["libgweather", "libgdata", "gtk+",'nss']
 end
 
 
