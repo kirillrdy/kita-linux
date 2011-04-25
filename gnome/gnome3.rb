@@ -103,7 +103,7 @@ end
 
 package 'zenity' do
   type :make
-  depends_on 'gnome-doc-utils'
+  depends_on ['gnome-doc-utils','libnotify']
 end
 
 package 'gnome-doc-utils' do
