@@ -108,7 +108,7 @@ end
 
 package 'gnome-doc-utils' do
   type :make
-  depends_on ['libxslt','XML-Parser']
+  depends_on ['libxslt','XML-Parser','scrollkeeper']
 end
 
 package 'librsvg' do
