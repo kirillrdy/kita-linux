@@ -98,9 +98,12 @@ end
 
 package 'mutter' do
   type :make
-  depends_on ["clutter", "GConf", "gtk+", "libcanberra"]
+  depends_on ["clutter", "GConf", "gtk+", "libcanberra",'zenity']
 end
 
+package 'zenity' do
+  type :make
+end
 
 package 'librsvg' do
   type :make
