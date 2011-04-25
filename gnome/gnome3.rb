@@ -108,10 +108,7 @@ end
 
 package 'gnome-doc-utils' do
   type :make
-  depends_on ['libxslt','XML-Parser','scrollkeeper']
-  configure do
-    './configure --prefix=/usr --disable-scrollkeeper'
-  end
+  depends_on ['libxslt','XML-Parser','rarian']
 end
 
 package 'librsvg' do
