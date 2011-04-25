@@ -1,6 +1,6 @@
 package 'firefox' do
   type :make
-  source 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.13/source/firefox-3.6.13.source.tar.bz2'
+  source 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0/source/firefox-4.0.source.tar.bz2'
   depends_on ['gtk+','libIDL','zip']
 
 
