@@ -103,6 +103,12 @@ end
 
 package 'zenity' do
   type :make
+  depends_on 'gnome-doc-utils'
+end
+
+package 'gnome-doc-utils' do
+  type :make
+  depends_on ['libxslt','XML-Parser']
 end
 
 package 'librsvg' do
