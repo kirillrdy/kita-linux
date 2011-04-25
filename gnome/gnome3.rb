@@ -203,7 +203,7 @@ end
 
 package 'libnotify' do
   type :make
-  source 'http://www.galago-project.org/files/releases/source/libnotify/libnotify-0.4.5.tar.bz2'
+  source 'ftp://ftp.gnome.org/pub/gnome/sources/libnotify/0.7/libnotify-0.7.2.tar.bz2'
   depends_on ["glib", "gtk+"]
 end
 
