@@ -116,6 +116,7 @@ end
 
 package 'libcanberra' do
   type :make
+  source 'http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.28.tar.gz'
   depends_on ["gtk+"]
 end
 
