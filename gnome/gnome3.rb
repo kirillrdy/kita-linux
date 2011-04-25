@@ -55,6 +55,7 @@ end
 
 package 'json-glib' do
   type :make
+  source 'http://ftp.gnome.org/pub/GNOME/sources/json-glib/0.12/json-glib-0.12.4.tar.bz2'
   depends_on ["gobject-introspection"]
 end
 
