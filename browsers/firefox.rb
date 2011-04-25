@@ -1,7 +1,7 @@
 package 'firefox' do
   type :make
   source 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/3.6.13/source/firefox-3.6.13.source.tar.bz2'
-  depends_on ['gtk+','libIDL','zip','curl']
+  depends_on ['gtk+','libIDL','zip']
 
 
   configure do
@@ -79,7 +79,7 @@ ac_add_options --with-system-zlib
 ac_add_options --disable-accessibility
 
 # uncomment this if you did not build curl
-#ac_add_options --disable-crashreporter
+ac_add_options --disable-crashreporter
 
 # comment this if you have built dbus-glib
 #ac_add_options --disable-dbus
