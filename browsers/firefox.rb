@@ -1,7 +1,15 @@
+package 'gtk2' do
+  type :make
+  source 'http://ftp.gnome.org/pub/gnome/sources/gtk+/2.20/gtk+-2.20.1.tar.bz2'
+  configure do
+    './configure --prefix=/usr --sysconfdir=/etc'
+  end
+end
+
 package 'firefox' do
   type :make
   source 'http://releases.mozilla.org/pub/mozilla.org/firefox/releases/4.0/source/firefox-4.0.source.tar.bz2'
-  depends_on ['gtk+','libIDL','zip']
+  depends_on ['gtk2','libIDL','zip']
 
 
   configure do
